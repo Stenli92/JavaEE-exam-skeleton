@@ -12,23 +12,23 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.util.Map;
-import java.util.Optional;
 
 @Named
 @RequestScoped
 public class LoginBean extends BaseBean {
 
     private LoginBindingModel model;
+
     private UserService userService;
-    private ModelMapper mapper;
+    private ModelMapper modelMapper;
 
     public LoginBean() {
     }
 
     @Inject
-    public LoginBean(UserService userService, ModelMapper mapper) {
+    public LoginBean(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
-        this.mapper = mapper;
+        this.modelMapper = modelMapper;
     }
 
     @PostConstruct
